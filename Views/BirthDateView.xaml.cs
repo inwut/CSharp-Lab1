@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab1.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace Lab1.Views
     /// </summary>
     public partial class BirthDateView : UserControl
     {
+        private BirthDateViewModel _viewModel;
+
         public BirthDateView()
         {
             InitializeComponent();
+            DataContext = _viewModel = new BirthDateViewModel();
         }
     }
 }
