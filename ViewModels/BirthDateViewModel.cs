@@ -57,7 +57,7 @@ namespace Lab1.ViewModel
             {
                 _chineseZodiacSign = value;
                 OnPropertyChanged(nameof(ChineseZodiacSign));
-            }
+            } 
         }
 
         public DateTime BirthDate
@@ -93,6 +93,9 @@ namespace Lab1.ViewModel
             int age = CalculateAge();
             if (age < 0 || age > 135)
             {
+                Age = "";
+                WesternZodiacSign = "";
+                ChineseZodiacSign = "";
                 MessageBox.Show("Wrong date!");
                 return;
             }
@@ -145,7 +148,7 @@ namespace Lab1.ViewModel
                 case 10:
                     return (day <= 23) ? "Libra" : "Scorpio";
                 case 11:
-                    return (day <= 22) ? "scorpio" : "Sagittarius";
+                    return (day <= 22) ? "Scorpio" : "Sagittarius";
                 case 12:
                     return (day <= 21) ? "Sagittarius" : "Capricorn";
                 default:
